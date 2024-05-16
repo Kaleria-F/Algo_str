@@ -5,8 +5,8 @@
 * [Реализацию StringGenerator](generate.cpp)
 * [Тестовые данные]()
 * Реализацию специализированных алгоритмов сортировки строк
-   * [STRING QUICKSORT](str_quickSort.cpp)
-   * STRING MERGESORT
+   * [STRING QUICKSORT](algo/str_quickSort.cpp)
+   * [STRING MERGESORT](algo/str_mergeSort.cpp)
    * SD RADIX SORT без переключения на STRING QUICKSORT
    * MSD RADIX SORT с переключением на STRING QUICKSORT
 * [Данные замеров времени и количества проведенных посимвольных сравнений](results_data)
