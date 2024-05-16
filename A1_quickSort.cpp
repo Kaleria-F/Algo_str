@@ -139,8 +139,8 @@ void quickSort(std::vector<std::string>& arr, int low, int high) {
 
 int main() {
     std::ofstream file("results_qs.csv");
-    file << "Array Type,Size,Time\n";
-    
+    file << "Size,U,RS,AS\n";
+
     StringGenerator generator;
     int maxSize = 3000; // - макс размер массива
     int minStrLength = 10; // - мин длина строки
@@ -156,27 +156,29 @@ int main() {
         std::vector<std::string> subUnsortedArray = generator.getSubArray(unsortedArray, size);
         std::vector<std::string> subReverseSortedArray = generator.getSubArray(reverseSortedArray, size);
         std::vector<std::string> subAlmostSortedArray = generator.getSubArray(almostSortedArray, size);
-        
+
+        file << size << ",";
+
         auto start = std::chrono::high_resolution_clock::now();
         quickSort(subUnsortedArray, 0, subUnsortedArray.size() - 1);
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> diff = end - start;
-        file << "U," << size << "," << diff.count() << "\n"; //U - unsorted
+        file << diff.count() << ",";
 
         start = std::chrono::high_resolution_clock::now();
         quickSort(subReverseSortedArray, 0, subReverseSortedArray.size() - 1);
         end = std::chrono::high_resolution_clock::now();
         diff = end - start;
-        file << "RS," << size << "," << diff.count() << "\n"; //RS - reverse sorted
+        file << diff.count() << ",";
 
         start = std::chrono::high_resolution_clock::now();
         quickSort(subAlmostSortedArray, 0, subAlmostSortedArray.size() - 1);
         end = std::chrono::high_resolution_clock::now();
         diff = end - start;
-        file << "AS," << size << "," << diff.count() << "\n";   //AS - almost sorted
+        file << diff.count() << "\n";
     }
 
     file.close();
-    
+
     return 0;
 }
