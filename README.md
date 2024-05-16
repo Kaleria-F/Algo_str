@@ -12,7 +12,7 @@ _____________________
 ___________________
 ### Этап 2. Анализ неспециализированных алгоритмов сортировки:
 
-#### **QUICKSORT**
+## **QUICKSORT**
 
 * дополнила код:
 
@@ -121,4 +121,61 @@ void quickSort(std::vector<std::string>& arr, int low, int high) {
 ![image](https://github.com/Kaleria-F/Algo_str/assets/113393162/07dc96d5-1d1c-41b2-b8ab-c727458df985)
 
 
+## **MergeSort**
 
+* дополнила код:
+
+  [📎 код](A1_mergeSort.cpp)
+
+1) функция:
+   ```
+   void mergeSort(std::vector<std::string> &arr, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+
+        merge(arr, left, mid, right);
+    }
+   }
+   ```
+   Для реализации функции, также прописала: 
+   
+   ```
+   void merge(std::vector<std::string> &arr, int left, int mid, int right) {
+    int i, j, k; //счетчики
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    std::vector<std::string> L(n1), R(n2);
+    for (i = 0; i < n1; i++)
+        L[i] = arr[left + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    i = 0;
+    j = 0;
+    k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+   }   
+   ```
