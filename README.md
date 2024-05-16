@@ -81,7 +81,7 @@ void quickSort(std::vector<std::string>& arr, int low, int high) {
 4) позже переписала код, чтобы результаты созранялись в таблицу, для дальнейшего анализа:
 
 
-   * открытие и название столбцов
+   * открытие файла, название столбцов
      ```
      std::ofstream file("results_qs.csv");
      file << "Size,U,RS,AS\n";
