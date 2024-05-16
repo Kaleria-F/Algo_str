@@ -123,8 +123,11 @@ void quickSort(std::vector<std::string>& arr, int low, int high) {
     }
    ```
 
-Вывод в консоль выгдядел так:
+💻 Вывод в консоль выгдядел так:
 ![image](https://github.com/Kaleria-F/Algo_str/assets/113393162/07dc96d5-1d1c-41b2-b8ab-c727458df985)
+
+📁[результаты](results_data/results_qs.csv)
+
 
 
 ## **MergeSort**
@@ -185,3 +188,4 @@ void quickSort(std::vector<std::string>& arr, int low, int high) {
     }
    }   
    ```
+📁[результаты](results_data/results_ms.csv)
