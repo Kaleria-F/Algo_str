@@ -1,0 +1,31 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+data =result
+
+# Получение данных для оси X
+x = np.arange(100, 3100, 100)  # Создание массива от 100 до 3000 с шагом 100
+
+# Получение данных для оси Y
+y1 = data.iloc[:, 0]
+y2 = data.iloc[:, 1]
+y3 = data.iloc[:, 2]
+y4 = data.iloc[:, 3]# Замените 'Column4' на имя вашего четвертого столбца
+
+# Создание графиков
+plt.plot(x, y1, label='QUICKSORT')
+plt.plot(x, y2, label='MERGESORT')
+plt.plot(x, y3, label='STRING QUICKSORT')
+plt.plot(x, y4, label='STRING MERGESORT')  # Замените 'Your fourth column' на подходящую метку
+
+# Добавление заголовка и подписей осей
+plt.title('Random strings')
+plt.xlabel('размер массива')
+plt.ylabel('время (сек)')
+
+# Добавление легенды
+plt.legend()
+
+# Отображение графика
+plt.show()
