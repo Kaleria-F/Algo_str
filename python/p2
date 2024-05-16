@@ -1,0 +1,10 @@
+# Список файлов для чтения
+files = ['/content/sample_data/results_qs.csv', '/content/sample_data/results_ms.csv', '/content/sample_data/results_str_qs.csv', '/content/sample_data/results_str_ms.csv']
+
+# Чтение первого столбца из каждого CSV файла и добавление его в список
+dataframes = [pd.read_csv(file, usecols=[1]) for file in files]
+
+# Объединение всех датафреймов в один
+result = pd.concat(dataframes, axis=1)
+
+print(result)
